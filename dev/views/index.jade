@@ -1,0 +1,19 @@
+include ./common/static
+
+extends layout/default.jade
+
+block head  
+  title index
+  +css("./css/index.css")
+
+block content
+  .pieces
+  script.
+    facade({
+      entry:"huixiang-static/entries/pieces.js"
+    })
+    
+  
+
+
+
