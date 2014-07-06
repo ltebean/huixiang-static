@@ -4,8 +4,6 @@ var fastclick = require('fastclick');
 
 fastclick(document.body);
 
-var domain = '223.4.15.141';
-
 seaport.connect(function dataHandler(data) {
 
   console.log('receive data:' + data);
@@ -17,8 +15,14 @@ seaport.connect(function dataHandler(data) {
   http.get({
     domain:'huixiang.im',
     path:'/api/pieces'
-  },function(data){
-    alert(data.length)
+  },function(pieces){
+    if(!pieces || pieces.length===0){
+      alert('error');
+      return;
+    }
+    pieces.forEach(function(piece){
+      $('<div>').text(piece.id).appendTo($('body'))
+    })
   })
  
 
