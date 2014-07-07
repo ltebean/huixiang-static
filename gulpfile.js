@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var jade = require('gulp-jade');
 var nib = require('nib');
-var browserify = require('gulp-browserify');
 
 process.on('uncaughtException', function(err) {
   console.log(err);
